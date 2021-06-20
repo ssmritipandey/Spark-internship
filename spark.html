@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<title>Spark</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="#home" class="w3-bar-item w3-button">Save the Rhino</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#menu" class="w3-bar-item w3-button">Our work</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="C:\Users\KIIT\Desktop\intern\1.jpg" alt="rhino" width="1500" height="40">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h1 class="w3-xxlarge">Save The Rhinos</h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="C:\Users\KIIT\Desktop\intern\2.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">About Us</h1><br>
+      <p class="w3-large">All five living rhino species (Black, White, Greater One-Horned, Sumatran, and Javan) are in terrible peril – from poaching, forest loss, and habitat conversion, from human settlements encroaching on their habitats in Africa, Indonesia, and India, and from the effects of living in small, isolated populations that can’t get together to breed. IRF protects particularly threatened rhino populations and their habitats in the wild, while also supporting management and applied research that can help improve the chances for rhinos’ long-term survival.</p>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <!-- Menu Section -->
+  <div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">What we do?</h1><br>
+      <h4>Protecting Rhino</h4>
+      <p class="w3-text-grey">We exist to save rhinos and grow the global population.</p><br>
+    
+      <h4>Reducing Illegal Trade</h4>
+      <p class="w3-text-grey">To stop rhino poaching, we need to tackle its root cause: consumer demand for rhino horn. Without consumer demand, there will be no incentive for poachers or traffickers.</p><br>
+    
+      <h4>Involving communities</h4>
+      <p class="w3-text-grey">It takes more than high security and habitat protection to ensure that rhino populations thrive.</p><br>
+    
+      <h4>Bringing Experts together</h4>
+      <p class="w3-text-grey">We share information and help link experts together. This means people working at the front-line of conservation benefit from the best skills possible.</p>
+    
+    </div>
+    
+    <div class="w3-col l6 w3-padding-large">
+      <img src="C:\Users\KIIT\Desktop\intern\3.jpg"  alt="Menu" style="width:100%">
+    </div>
+  </div>
+  <p><button onclick="onButtonClick()" class="w3-button w3-light-grey w3-section" type="submit">DONATE NOW</button></p>
+  <hr>
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-64" id="contact">
+    <h1>Contact</h1><br>
+    <p>We’ll send you the latest news about rhinos plus information about our work, campaigns, and events. We promise never to sell your email address or share it without your permission, and you can unsubscribe at any time</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="email"></p>
+      <p><button class="w3-button w3-light-grey w3-section" type="submit">Subscribe</button></p>
+    </form>
+  </div>
+  
+<!-- End page content -->
+</div>
+<script src="https://js.instamojo.com/v1/checkout.js"></script>
+<script>
+    /* Start client-defined Callback Handler Functions */
+  function onOpenHandler () {
+    alert('Payments Modal is Opened');
+  }
+
+  function onCloseHandler () {
+    alert('Payments Modal is Closed');
+  }
+
+  function onPaymentSuccessHandler (response) {
+    alert('Payment Success');
+    console.log('Payment Success Response', response);
+  }
+
+  function onPaymentFailureHandler (response) {
+    alert('Payment Failure');
+    console.log('Payment Failure Response', response);
+  }
+  /* End client-defined Callback Handler Functions */
+
+  /* Configuring Handlers */
+  Instamojo.configure({
+    handlers: {
+      onOpen: onOpenHandler,
+      onClose: onCloseHandler,
+      onSuccess: onPaymentSuccessHandler,
+      onFailure: onPaymentFailureHandler
+    }
+  });
+  function onButtonClick() {
+    Instamojo.open('https://test.instamojo.com/@smriti1aug/');
+  }
+// Toggle between hiding and showing blog replies/comments
+document.getElementById("myBtn").click();
+function myFunction(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+function likeFunction(x) {
+  x.style.fontWeight = "bold";
+  x.innerHTML = "&#10003; Liked";
+}
+</script>
+</body>
+</html>
