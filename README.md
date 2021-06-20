@@ -1,6 +1,4 @@
-# Spark-internship
-Payment Gateway
-Integration
+# Spark-internship- Payment Gateway Integration
 ◇ Create a simple website where payment gateway is integrated.
 ◇ There will be a simple donate button on homepage. On clicking
 the donate button, the user will land on the payment page where
